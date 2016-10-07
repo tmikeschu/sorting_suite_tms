@@ -8,16 +8,16 @@ class MergeSort
         puts ""
         puts "Unsorted: #{array}"
         puts "Sorted: "
-        merge(array)
+        split(array)
     end
     
-    def merge(array)
+    def split(array)
         #binding.pry
         return array if array.length <= 1
         
         mid   = array.length / 2
-        left  = merge(array[0...mid])
-        right = merge(array[mid..-1])
+        left  = split(array[0...mid])
+        right = split(array[mid..-1])
         merge_sorted_arrays(left, right)
     end
 

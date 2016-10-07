@@ -31,13 +31,17 @@ class InsertionSort
 
 end
 
+=begin
+    
 sorter = InsertionSort.new
+
 scramble = ("a".."k").to_a.shuffle
 doubles = scramble.zip(scramble).flatten.shuffle
 number_salad = (1..15).to_a.shuffle
-
 
 sorter.sort(["d", "b", "a", "c"])
 sorter.sort(scramble)
 sorter.sort(doubles)
 sorter.sort(number_salad)
+
+=end

@@ -39,14 +39,17 @@ class MergeSort
 
 end
 
+=begin
+
 sorter = MergeSort.new
 
 scramble = ("a".."g").to_a.shuffle
 doubles = scramble.zip(scramble).flatten.shuffle
 number_salad = (1..15).to_a.shuffle
 
-
-#p sorter.sort(["d", "b", "a", "c"])
+p sorter.sort(["d", "b", "a", "c"])
 p sorter.sort(scramble)
 p sorter.sort(doubles)
 p sorter.sort(number_salad)
+
+=end

@@ -1,8 +1,6 @@
 require 'pry'
-require 'benchmark'
 
 class InsertionSort
-    include Benchmark
     def initialize
     end
 

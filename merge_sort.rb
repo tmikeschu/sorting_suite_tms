@@ -1,8 +1,6 @@
 require 'pry'
-require 'benchmark'
 
 class MergeSort
-    include Benchmark
     def initilize
     end
 

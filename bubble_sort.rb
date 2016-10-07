@@ -1,9 +1,7 @@
 require 'pry'
-require 'benchmark'
-
 
 class BubbleSort
-    include Benchmark
+    
     def initialize
     end
 

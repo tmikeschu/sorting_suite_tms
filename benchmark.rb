@@ -62,18 +62,18 @@ module SortingSuite
         end
 
         def fastest(array)
-            times = []
-            merge_time  = [time_without_puts(SortingSuite::MergeSort, array), "MergeSort"]
-            bubble_time = [time_without_puts(SortingSuite::BubbleSort, array), "BubbleSort"]
+            times          = []
+            merge_time     = [time_without_puts(SortingSuite::MergeSort, array), "MergeSort"]
+            bubble_time    = [time_without_puts(SortingSuite::BubbleSort, array), "BubbleSort"]
             insertion_time = [time_without_puts(SortingSuite::InsertionSort, array), "InsertionSort"]
             times << merge_time << bubble_time << insertion_time
             puts "#{times.sort.first[-1]} is the fastest"
         end
 
         def slowest(array)
-            times = []
-            merge_time  = [time_without_puts(SortingSuite::MergeSort, array), "MergeSort"]
-            bubble_time = [time_without_puts(SortingSuite::BubbleSort, array), "BubbleSort"]
+            times          = []
+            merge_time     = [time_without_puts(SortingSuite::MergeSort, array), "MergeSort"]
+            bubble_time    = [time_without_puts(SortingSuite::BubbleSort, array), "BubbleSort"]
             insertion_time = [time_without_puts(SortingSuite::InsertionSort, array), "InsertionSort"]
             times << merge_time << bubble_time << insertion_time
             puts "#{times.sort.reverse.first[-1]} is the slowest"

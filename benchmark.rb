@@ -1,25 +1,25 @@
 require 'pry'
 require 'benchmark'
-require '~/Turing/1module/1week/Sorting_Suite/bubble_sort.rb'
+require './bubble_sort.rb'
 require './merge_sort'
-require_relative 'insertion_sort'
+require './insertion_sort'
 
 module SortingSuite
     include Benchmark
 
-    class Bubble 
+    class BubbleSort 
         def initialize(array)
             BubbleSort.new(array)
         end
     end
 
-    class Merge 
+    class MergeSort
         def initialize(array)
             MergeSort.new(array)
         end
     end
 
-    class Insertion 
+    class InsertionSort
         def initialize(array)
             InsertionSort.new(array)
         end
@@ -27,10 +27,21 @@ module SortingSuite
 
     class BenchmarkClass
         def time(sorter, array)
+            sort_time = benchmark(sorter, array)
+            #puts "#{method} took #{time}"
         end
         
         def fastest(array)
         
+        end
+
+        def slowest(array)
+            merge_time = time(SortingSuite::MergeSort, array)
+
+            bubble_sort = SortingSuite::Bubble.new(array)
+            insertion_sort = SortingSuite::Insertion.new(array)
+            
+            
         end
 
     end

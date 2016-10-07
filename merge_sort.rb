@@ -1,5 +1,4 @@
 require 'pry'
-require_relative 'benchmark'
 require 'benchmark'
 
 class MergeSort

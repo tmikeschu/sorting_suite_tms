@@ -6,31 +6,53 @@ require './insertion_sort'
 
 module SortingSuite
     include Benchmark
+    class BubbleSort
+        attr_writer :array
 
-    class BubbleSort 
         def initialize(array)
-            BubbleSort.new(array)
+            @array = array
+        end
+
+        def sort
+            BubbleSort.new.sort(array)        
         end
     end
 
     class MergeSort
+        attr_writer :array
+        
         def initialize(array)
-            MergeSort.new(array)
+            @array = array
+        end
+
+        def sort
+            MergeSort.new.sort(array)
         end
     end
 
     class InsertionSort
+        attr_writer :array
+
         def initialize(array)
-            InsertionSort.new(array)
+            @array = array
+        end
+
+        def sort
+            InsertionSort.new.sort(array)
         end
     end
 
     class BenchmarkClass
+        include Benchmark
         def time(sorter, array)
             sort_time = benchmark(sorter, array)
-            #puts "#{method} took #{time}"
+            puts "#{sorter} took #{sort_time.real.round} seconds"
         end
-        
+
+        def benchmark(sorter, array)
+            Benchmark.measure {sorter.new(array)}
+        end
+
         def fastest(array)
         
         end
@@ -48,9 +70,9 @@ module SortingSuite
 
 end
 
-#benchmark = SortingSuite::Benchmark.new
-=begin
+benchmark = SortingSuite::BenchmarkClass.new
 benchmark.time(SortingSuite::InsertionSort, [3,3,4,5,1])
+=begin
 #=> "InsertionSort took 0.004333 seconds"
 
 benchmark.time(SortingSuite::MergeSort)

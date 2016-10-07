@@ -1,6 +1,9 @@
 require 'pry'
+require 'benchmark'
+
 
 class BubbleSort
+    include Benchmark
     def initialize
     end
 
@@ -33,3 +36,5 @@ sorter.sort(["d", "b", "a", "c"])
 sorter.sort(scramble)
 sorter.sort(doubles)
 sorter.sort(number_salad)
+
+

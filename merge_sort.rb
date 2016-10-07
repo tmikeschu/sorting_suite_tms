@@ -1,6 +1,9 @@
 require 'pry'
+require_relative 'sorting_suite_module'
+require 'benchmark'
 
 class MergeSort
+    include Benchmark
     def initilize
     end
 

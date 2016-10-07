@@ -5,28 +5,46 @@ class MergeSort
     end
 
     def sort(array)
-        binding.pry
+        puts ""
+        puts "Unsorted: #{array}"
+        puts "Sorted: "
+        merge(array)
+    end
+    
+    def merge(array)
+        #binding.pry
         return array if array.length <= 1
         
         mid   = array.length / 2
-        left  = sort(array[0, mid])
-        right = sort(array[mid, array.length-mid])
-        merge_sorted_arrays left, right
+        left  = merge(array[0...mid])
+        right = merge(array[mid..-1])
+        merge_sorted_arrays(left, right)
     end
 
-    def merge_sorted_arrays
-        
+    def merge_sorted_arrays(left, right)
+        #binding.pry
+        merged_array = []
+        until left.length == 0 || right.length == 0
+            if left.first <= right.first || right.empty?
+                merged_array << left.shift
+            else 
+                merged_array << right.shift
+            end
+        end
+        merged_array << left << right
+        merged_array.flatten!
     end
+
 end
 
 sorter = MergeSort.new
 
-scramble = ("a".."k").to_a.shuffle
+scramble = ("a".."g").to_a.shuffle
 doubles = scramble.zip(scramble).flatten.shuffle
 number_salad = (1..15).to_a.shuffle
 
 
-p sorter.sort(["d", "b", "a", "c"])
-sorter.sort(scramble)
-sorter.sort(doubles)
-sorter.sort(number_salad)
+#p sorter.sort(["d", "b", "a", "c"])
+p sorter.sort(scramble)
+p sorter.sort(doubles)
+p sorter.sort(number_salad)

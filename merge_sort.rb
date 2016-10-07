@@ -1,5 +1,5 @@
 require 'pry'
-require_relative 'sorting_suite_module'
+require_relative 'benchmark'
 require 'benchmark'
 
 class MergeSort
